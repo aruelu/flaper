@@ -1,0 +1,60 @@
+#!/bin/bash
+
+
+function flatpakinstall() {
+
+    LOGFILE="$1"
+    DIRBIN="$2"
+    APPNAME="$3"
+    GETREMOTES="$4"
+    GETAPPID="$5"
+
+    GETPASS=$(yad --form --separator="|" --field=$(echo $USER)"のパスワードを入力":H | cut -f 1 -d "|")
+    if [ "$GETPASS" = "" ]
+    then
+        yad --error  --text="パスワードの入力がありません"
+        exit 1
+    fi
+
+    (
+    yad --info --on-top --no-buttons --title="処理中" --text="このウィンドウが自動で閉じるまで待って下さい" &
+    GETPID=`echo $!`
+    echo "ソフト名:" 
+    echo $APPNAME 
+    echo "" 
+    echo "remotes,Application ID:" 
+    echo $GETREMOTES","$GETAPPID 
+    echo "" 
+    echo "処理結果:" 
+
+    echo "$GETPASS" | sudo -S flatpak install -y $GETREMOTES $GETAPPID 
+    if [ $? == 0 ]
+    then
+        echo "" 
+        echo "############################################################################"
+        echo "flatpak run --command=fc-cache "$GETAPPID" -f -v"
+
+        flatpak run --command=fc-cache $GETAPPID -f -v 
+
+        if [ `echo "$GETAPPID" | grep "Plugin" | wc -l` = 0  ]
+        then
+            TMPNAME=`echo "$GETAPPID" | cut -f 3 -d "." | tr '[:upper:]' '[:lower:]'`
+            RAPNAME=$DIRBIN"/"$TMPNAME
+            echo "#!/bin/bash" > $RAPNAME
+            echo "flatpak run "$GETAPPID >> $RAPNAME
+            chown $GETUSER:$GETUSER $RAPNAME
+            chmod +x $RAPNAME
+            yad --info --title="実行方法"  --text=`echo $RAPNAME`"で実行できます" &
+        else
+            yad --info --title="確認"  --text="プラグインをインストールしました" &
+        fi
+    else
+        yad --error --text="インストールに失敗しました" &
+    fi
+    kill $GETPID
+    ) 2>&1 | tee -a $LOGFILE | \
+        yad --text-info --title="「flatpakでインストール」の処理結果" \
+        --width=600  --height=400   \
+        --tail  --button=OK:0 --center --checkbox="処理終了を確認"
+
+ }
