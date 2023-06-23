@@ -1,4 +1,4 @@
-# flaper
+起動# flaper
 flatpakでのソフトのインストール、実行、更新、文字化け改善に対応。
 
 # 対応環境
@@ -24,11 +24,13 @@ flatpakでのソフトのインストール、実行、更新、文字化け改�
 # 機能
 - flatpakでインストール
 - flatpacで探してインストール
-- flatpakのソフト駆動
-- flatpakのソフト更新
+- flatpakのソフト起動※
+- flatpakのソフト更新※
 - flatpakの全ソフト更新
-- flatpakの文字化け改善
-- flatpakのソフト削除
+- flatpakの文字化け改善※
+- flatpakのソフト削除※
+
+※の機能はflaperでインストールしたソフトにのみ対応しています。
 
 # TODO
 - [ ] RedHat系対応
