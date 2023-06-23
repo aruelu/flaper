@@ -29,6 +29,7 @@ then
         repo_name="https://download.opensuse.org/repositories/GNOME:Apps/15.4/GNOME:Apps.repo"
     else
         echo "対応していないSUSEです"
+        exit 2
     fi
     sudo zypper addrepo "$repo_name"
     sudo zypper refresh
