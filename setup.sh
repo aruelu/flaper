@@ -7,6 +7,10 @@ then
     sudo apt update
     package_command="apt install -y"
 
+elif type dnf &> /dev/null
+then
+    package_command="dnf install -y"
+
 elif type yum &> /dev/null
 then
     package_command="yum install -y"
