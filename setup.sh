@@ -18,13 +18,13 @@ then
 
 elif type zypper &> /dev/null
 then
-    if cat /etc/issue | grep Tumbleweed &> /dev/null
+    if cat /etc/os-release | grep Tumbleweed &> /dev/null
     then
         remo_name="https://download.opensuse.org/repositories/GNOME:Apps/openSUSE_Factory+GNOME_Factory/GNOME:Apps.repo"
-    elif cat /etc/issue | grep 15.5 &> /dev/null
+    elif cat /etc/os-release | grep 15.5 &> /dev/null
     then
         repo_name="https://download.opensuse.org/repositories/GNOME:Apps/15.5/GNOME:Apps.repo"
-    elif cat /etc/issue | grep 15.4 &> /dev/null
+    elif cat /etc/os-release | grep 15.4 &> /dev/null
     then
         repo_name="https://download.opensuse.org/repositories/GNOME:Apps/15.4/GNOME:Apps.repo"
     fi
