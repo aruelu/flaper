@@ -9,6 +9,8 @@ flatpakでのソフトのインストール、実行、更新、文字化け改�
 - ubuntu22.04
 - openSUSE Tumbleweed
 - openSUSE Leap 15.5（15.4も多分大丈夫）
+- Garuda
+- manjaro
 
 
 # 準備
