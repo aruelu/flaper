@@ -39,4 +39,4 @@ flatpakでのソフトのインストール、実行、更新、文字化け改�
 # TODO
 - [ ] RedHat系対応
 - [ ] Arch系対応
-- [ ] Fedora系対応  
+- [X] Fedora系対応  
