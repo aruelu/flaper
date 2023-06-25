@@ -12,6 +12,7 @@ flatpakでのソフトのインストール、実行、更新、文字化け改�
 - Garuda
 - manjaro
 - Alter
+- Fedora38
 
 
 # 準備
