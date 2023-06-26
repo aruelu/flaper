@@ -24,13 +24,13 @@ elif type zypper &> /dev/null
 then
     if cat /etc/os-release | grep "openSUSE Tumbleweed" &> /dev/null
     then
-        remo_name="https://download.opensuse.org/repositories/GNOME:Apps/openSUSE_Factory+GNOME_Factory/GNOME:Apps.repo"
+        remo_name="https://download.opensuse.org/repositories/home:munix9/openSUSE_Tumbleweed/home:munix9.repo"
     elif cat /etc/os-release | grep "openSUSE Leap 15.5" &> /dev/null
     then
-        repo_name="https://download.opensuse.org/repositories/GNOME:Apps/15.5/GNOME:Apps.repo"
+        repo_name="https://download.opensuse.org/repositories/home:munix9/15.5/home:munix9.repo"
     elif cat /etc/os-release | grep "openSUSE Leap 15.4" &> /dev/null
     then
-        repo_name="https://download.opensuse.org/repositories/GNOME:Apps/15.4/GNOME:Apps.repo"
+        repo_name="https://download.opensuse.org/repositories/home:munix9/15.4/home:munix9.repo"
     else
         echo "対応していないSUSEです"
         exit 2
