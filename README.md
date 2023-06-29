@@ -9,6 +9,7 @@ flatpakでのソフトのインストール、実行、更新、文字化け改�
 - ubuntu22.04
 - openSUSE Tumbleweed
 - openSUSE Leap 15.5（15.4も多分大丈夫）
+- Arch
 - Garuda
 - manjaro
 - Alter
@@ -38,5 +39,5 @@ flatpakでのソフトのインストール、実行、更新、文字化け改�
 
 # TODO
 - [ ] RedHat系対応
-- [ ] Arch系対応
+- [X] Arch系対応
 - [X] Fedora系対応  
