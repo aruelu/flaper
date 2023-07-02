@@ -24,7 +24,7 @@ elif type zypper &> /dev/null
 then
     if cat /etc/os-release | grep "openSUSE Tumbleweed" &> /dev/null
     then
-        remo_name="https://download.opensuse.org/repositories/home:munix9/openSUSE_Tumbleweed/home:munix9.repo"
+        repo_name="https://download.opensuse.org/repositories/home:munix9/openSUSE_Tumbleweed/home:munix9.repo"
     elif cat /etc/os-release | grep "openSUSE Leap 15.5" &> /dev/null
     then
         repo_name="https://download.opensuse.org/repositories/home:munix9/15.5/home:munix9.repo"
